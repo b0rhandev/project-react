@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borhan | Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { orange: '#F47920', purple: '#8B5CF6' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-[#030305] text-white transition-colors duration-500 overflow-x-hidden selection:bg-[#F47920] selection:text-black">
+
+    <!-- نورهای پس‌زمینه -->
+    <div class="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
+        <div class="absolute top-[-10%] left-[-10%] w-[60%] h-[50%] rounded-full bg-purple-900/20 blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] right-[-10%] w-[60%] h-[50%] rounded-full bg-orange-900/20 blur-[120px]"></div>
+    </div>
+
+    <!-- ================= نوار منو (Navbar) مشترک در همه صفحات ================= -->
+    <header class="sticky top-0 z-50 w-full backdrop-blur-xl bg-[#030305]/80 border-b border-white/10">
+        <div class="max-w-7xl mx-auto py-3.5 sm:py-4 px-4 sm:px-6 lg:px-12 flex justify-between items-center">
+            <a href="index.html" class="text-xl sm:text-2xl font-black tracking-tighter flex items-center gap-2">
+                <span class="bg-gradient-to-r from-[#F47920] to-purple-600 text-transparent bg-clip-text">B.</span>
+                <span class="text-xs sm:text-sm font-bold text-gray-300 tracking-normal">BENYAMIN</span>
+            </a>
+
+            <!-- منوی لپ‌تاپ -->
+            <nav class="hidden lg:flex items-center bg-white/5 border border-white/10 rounded-full px-6 py-2 backdrop-blur-lg">
+                <ul class="flex items-center gap-8 text-sm font-semibold text-gray-400">
+                    <li>
+                        <a href="index.html" class="text-[#F47920] font-bold flex items-center gap-1.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#F47920] animate-pulse"></span> Home
+                        </a>
+                    </li>
+                    <li><a href="/src/project.html" class="hover:text-white transition-colors">Projects</a></li>
+                    <li><a href="/src/skill.html" class="hover:text-white transition-colors">Skills</a></li>
+                    <li><a href="#about" class="hover:text-white transition-colors">About</a></li>
+                    <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="flex items-center gap-2.5 sm:gap-4">
+                <button id="themeToggle" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors cursor-pointer">
+                    <span id="themeIcon" class="text-sm sm:text-lg">🌙</span>
+                </button>
+                <a href="#contact" class="bg-gradient-to-r from-[#F47920] to-purple-600 hover:scale-105 text-white font-bold text-xs sm:text-sm px-4 sm:px-6 py-2 sm:py-2.5 rounded-full transition-all">
+                    Hire Me &gt;
+                </a>
+            </div>
+        </div>
+
+        <!-- منوی موبایل -->
+        <nav class="lg:hidden w-full border-t border-white/5 bg-[#080810]/90 px-4 py-2.5 overflow-x-auto">
+            <ul class="flex items-center justify-center gap-5 sm:gap-8 text-xs font-semibold text-gray-400 whitespace-nowrap">
+                <li><a href="index.html" class="text-[#F47920] font-bold bg-[#F47920]/10 border border-[#F47920]/30 px-3 py-1 rounded-full">Home</a></li>
+                <li><a href="projects.html" class="hover:text-white py-1">Projects</a></li>
+                <li><a href="skills.html" class="hover:text-white py-1">Skills</a></li>
+                <li><a href="#about" class="hover:text-white py-1">About</a></li>
+                <li><a href="#contact" class="hover:text-white py-1">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ================= محتوای اصلی صفحه خانه ================= -->
+    <main class="max-w-6xl mx-auto px-4 py-12 lg:py-20 relative z-10">
+
+        <!-- بخش Hero -->
+        <section class="text-center mb-16 lg:mb-24 px-2">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6">
+                <span class="w-2 h-2 rounded-full bg-green-500 animate-ping"></span>
+                <span class="text-xs font-bold text-gray-300 uppercase tracking-widest">Available for Freelance</span>
+            </div>
+            <h1 class="text-4xl sm:text-6xl lg:text-8xl font-black tracking-tight mb-6 uppercase leading-tight">
+                BUILDING DIGITAL<br>
+                <span class="bg-gradient-to-r from-[#F47920] via-purple-500 to-cyan-400 text-transparent bg-clip-text">EXPERIENCES</span>
+            </h1>
+            <p class="text-gray-400 text-sm sm:text-base lg:text-xl font-medium max-w-2xl mx-auto mb-10 leading-relaxed">
+                Creative Frontend Developer & UI Designer. Turning complex ideas into sleek, interactive, and responsive codes.
+            </p>
+            
+            <!-- دکمه‌های هدایت به صفحات پروژه و مهارت‌ها -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="projects.html" class="w-full sm:w-auto bg-[#F47920] hover:bg-[#ff8f3d] text-black font-bold px-8 py-4 rounded-xl transition-all shadow-[0_0_25px_rgba(244,121,32,0.4)] text-sm sm:text-base">
+                    Explore My Projects →
+                </a>
+                <a href="skills.html" class="w-full sm:w-auto bg-white/5 hover:bg-white/10 border border-white/10 font-bold px-8 py-4 rounded-xl transition-all text-sm sm:text-base">
+                    View My Skills ⚡
+                </a>
+            </div>
+        </section>
+
+        <!-- گرید درباره من، آمار و فرم تماس -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- کارت ۱: درباره من -->
+            <div id="about" class="bg-[#0a0a12] border border-white/10 rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover:border-blue-500/40 transition-all shadow-2xl">
+                <div>
+                    <h4 class="text-xs font-black text-blue-400 tracking-wider uppercase mb-4">About Me</h4>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-r from-[#F47920] to-purple-600 flex items-center justify-center text-2xl font-bold shrink-0">
+                            👨‍💻
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Benyamin</h3>
+                            <p class="text-xs text-gray-400">Frontend Specialist</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-6">
+                        Hey there! I love building interfaces that feel right. My mission is to merge clean code logic and creative visuals using React, Tailwind, and modern AI workflows.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-2 pt-4 border-t border-white/5">
+                    <span class="text-[10px] font-bold bg-white/5 px-3 py-1 rounded-full">Fast Delivery</span>
+                    <span class="text-[10px] font-bold bg-white/5 px-3 py-1 rounded-full">Pixel-Perfect</span>
+                    <span class="text-[10px] font-bold bg-white/5 px-3 py-1 rounded-full">Responsive</span>
+                </div>
+            </div>
+
+            <!-- کارت ۲: آمارها و دسترسی سریع -->
+            <div class="bg-[#0a0a12] border border-white/10 rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover:border-purple-500/40 transition-all shadow-2xl">
+                <div>
+                    <div class="text-4xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#F47920] to-purple-500">40+</div>
+                    <div class="text-xs font-bold text-gray-400 uppercase mt-1">Completed UI Sections</div>
+                </div>
+                <hr class="border-white/5 my-4">
+                <div>
+                    <div class="text-4xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-400">2,160h+</div>
+                    <div class="text-xs font-bold text-gray-400 uppercase mt-1">Coding & Practice</div>
+                </div>
+                <div class="mt-6 pt-4 border-t border-white/5 flex justify-between items-center">
+                    <span class="text-xs text-gray-400">Want to see my stack?</span>
+                    <a href="skills.html" class="text-xs font-bold text-[#F47920] hover:underline">Go to Skills →</a>
+                </div>
+            </div>
+
+            <!-- کارت ۳: فرم تماس هوشمند -->
+            <div id="contact" class="md:col-span-2 lg:col-span-1 bg-[#0a0a12] border border-white/10 rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover:border-[#F47920]/40 transition-all shadow-2xl">
+                <div class="mb-4">
+                    <h4 class="text-xs font-black text-[#F47920] tracking-wider uppercase mb-1">Get In Touch</h4>
+                    <h3 class="text-2xl font-black tracking-tight">CONTACT ME</h3>
+                </div>
+
+                <div id="formContainer">
+                    <form id="contactForm" class="flex flex-col gap-3">
+                        <input type="text" id="name" required placeholder="Your Name" class="bg-[#030305] border border-white/10 rounded-xl p-3 text-xs sm:text-sm outline-none focus:border-[#F47920] text-white w-full">
+                        <input type="email" id="email" required placeholder="Your Email" class="bg-[#030305] border border-white/10 rounded-xl p-3 text-xs sm:text-sm outline-none focus:border-[#F47920] text-white w-full">
+                        <textarea id="message" required rows="3" placeholder="Tell me about your project..." class="bg-[#030305] border border-white/10 rounded-xl p-3 text-xs sm:text-sm outline-none focus:border-[#F47920] text-white w-full resize-none"></textarea>
+                        <button type="submit" class="w-full bg-[#F47920] hover:bg-[#d96615] text-black font-bold py-3 px-4 rounded-xl text-xs sm:text-sm transition-colors cursor-pointer">
+                            Send Message &gt;
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="border-t border-white/5 py-8 text-center text-xs text-gray-500">
+        <p>© 2026 Borhan. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

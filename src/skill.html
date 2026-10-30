@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BENYAMIN | Skills</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { orange: '#F47920', purple: '#8B5CF6' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee { display: flex; width: max-content; animation: marquee 25s linear infinite; }
+        .animate-marquee:hover { animation-play-state: paused; }
+        @keyframes spinSlow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .spin-slow:hover svg { animation: spinSlow 6s linear infinite; }
+    </style>
+</head>
+<body class="bg-[#030305] text-white transition-colors duration-500 overflow-x-hidden selection:bg-[#F47920] selection:text-black">
+
+    <!-- ================= نوار منو (Navbar) مشترک در همه صفحات ================= -->
+    <header class="sticky top-0 z-50 w-full backdrop-blur-xl bg-[#030305]/80 border-b border-white/10">
+        <div class="max-w-7xl mx-auto py-3.5 sm:py-4 px-4 sm:px-6 lg:px-12 flex justify-between items-center">
+            <a href="index.html" class="text-xl sm:text-2xl font-black tracking-tighter flex items-center gap-2">
+                <span class="bg-gradient-to-r from-[#F47920] to-purple-600 text-transparent bg-clip-text">B.</span>
+                <span class="text-xs sm:text-sm font-bold text-gray-300 tracking-normal">BENYAMIN</span>
+            </a>
+
+            <!-- منوی لپ‌تاپ (گزینه Skills روشن است) -->
+            <nav class="hidden lg:flex items-center bg-white/5 border border-white/10 rounded-full px-6 py-2 backdrop-blur-lg">
+                <ul class="flex items-center gap-8 text-sm font-semibold text-gray-400">
+                    <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+                    <li><a href="projects.html" class="hover:text-white transition-colors">Projects</a></li>
+                    <li>
+                        <a href="skills.html" class="text-[#F47920] font-bold flex items-center gap-1.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-[#F47920] animate-pulse"></span> Skills
+                        </a>
+                    </li>
+                    <li><a href="index.html#about" class="hover:text-white transition-colors">About</a></li>
+                    <li><a href="index.html#contact" class="hover:text-white transition-colors">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="flex items-center gap-2.5 sm:gap-4">
+                <button id="themeToggle" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors cursor-pointer">
+                    <span id="themeIcon" class="text-sm sm:text-lg">🌙</span>
+                </button>
+                <a href="index.html#contact" class="bg-gradient-to-r from-[#F47920] to-purple-600 hover:scale-105 text-white font-bold text-xs sm:text-sm px-4 sm:px-6 py-2 sm:py-2.5 rounded-full transition-all">
+                    Hire Me &gt;
+                </a>
+            </div>
+        </div>
+
+        <!-- منوی موبایل -->
+        <nav class="lg:hidden w-full border-t border-white/5 bg-[#080810]/90 px-4 py-2.5 overflow-x-auto">
+            <ul class="flex items-center justify-center gap-5 sm:gap-8 text-xs font-semibold text-gray-400 whitespace-nowrap">
+                <li><a href="/src/inex1.html" class="hover:text-white py-1">Home</a></li>
+                <li><a href="/src/project.html" class="hover:text-white py-1">Projects</a></li>
+                <li><a href="skills.html" class="text-[#F47920] font-bold bg-[#F47920]/10 border border-[#F47920]/30 px-3 py-1 rounded-full">Skills</a></li>
+                <li><a href="index.html#about" class="hover:text-white py-1">About</a></li>
+                <li><a href="index.html#contact" class="hover:text-white py-1">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ================= محتوای اصلی صفحه مهارت‌ها ================= -->
+    <section class="w-full py-12 sm:py-20 lg:py-28 relative overflow-hidden select-none">
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+            
+            <div class="flex flex-col items-center text-center mb-12 sm:mb-16 lg:mb-24">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 mb-5">
+                    <span class="text-[#F47920] text-xs sm:text-sm">⚡</span>
+                    <span class="text-[10px] sm:text-xs font-bold text-gray-300 tracking-[0.2em] uppercase">Superpowers & Stack</span>
+                </div>
+                <h1 class="text-3xl sm:text-5xl md:text-6xl font-black text-white tracking-tighter mb-4">
+                    MY DIGITAL <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-500 to-[#F47920]">ARSENAL</span>
+                </h1>
+            </div>
+
+            <!-- گرید ۶ واحدی کاملاً ریسپانسیو -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
+
+                <!-- کارت ۱: React -->
+                <div class="group spin-slow bg-[#0a0a12] border border-white/10 hover:border-cyan-400/50 rounded-3xl p-6 sm:p-7 transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
+                                <svg class="w-7 h-7 sm:w-8 sm:h-8" viewBox="-11.5 -10.23174 23 20.46348" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <circle cx="0" cy="0" r="2.05" fill="currentColor"/>
+                                    <g><ellipse rx="11" ry="4.2"/><ellipse rx="11" ry="4.2" transform="rotate(60)"/><ellipse rx="11" ry="4.2" transform="rotate(120)"/></g>
+                                </svg>
+                            </div>
+                            <span class="text-[10px] font-mono font-bold uppercase px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-300">UI Architecture</span>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-black text-white mb-2">React & Next.js</h3>
+                        <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-6">Building dynamic, component-driven web applications with smooth state management.</p>
+                    </div>
+                    <div class="flex items-center gap-1.5 pt-4 border-t border-white/5">
+                        <span class="text-[10px] font-mono text-gray-500 mr-auto">POWER</span>
+                        <div class="w-5 h-1.5 rounded-full bg-cyan-400"></div>
+                        <div class="w-5 h-1.5 rounded-full bg-cyan-400"></div>
+                        <div class="w-5 h-1.5 rounded-full bg-cyan-400"></div>
+                        <div class="w-5 h-1.5 rounded-full bg-cyan-400"></div>
+                        <div class="w-5 h-1.5 rounded-full bg-cyan-950"></div>
+                    </div>
+                </div>
+
+                <!-- کارت ۲: Tailwind -->
+                <div class="group bg-[#0a0a12] border border-white/10 hover:border-sky-400/50 rounded-3xl p-6 sm:p-7 transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 font-black text-xl">
+                                TW
+                            </div>
+                            <span class="text-[10px] font-mono font-bold uppercase px-3 py-1 rounded-full bg-sky-500/10 text-sky-300">Styling Engine</span>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-black text-white mb-2">Tailwind CSS</h3>
+                        <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-6">Crafting ultra-responsive, dark-mode ready, and custom glassmorphic layouts rapidly.</p>
+                    </div>
+                    <div class="flex items-center gap-1.5 pt-4 border-t border-white/5">
+                        <span class="text-[10px] font-mono text-gray-500 mr-auto">POWER</span>
+                        <div class="w-5 h-1.5 rounded-full bg-sky-400"></div>
+                        <div class="w-5 h-1.5 rounded-full bg-sky-400"></div>
+                        <div class="w-5 h-1.5 rounded-full bg-sky-400"></div>
+                        <div class="w-5 h-1.5 rounded-full bg-sky-400"></div>
+                        <div class="w-5 h-1.5 rounded-full bg-sky-400"></div>
+                    </div>
+                </div>
+
+                <!-- کارت ۳: JavaScript -->
+                <div class="group bg-[#0a0a12] border border-white/10 hover:border-yellow-400/50 rounded-3xl p-6 sm:p-7 transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center text-yellow-400 font-black text-xl">
+                                JS
+                            </div>
+                            <span class="text-[10px] font-mono font-bold uppercase px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-300">Core Logic</span>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-black text-white mb-2">JavaScript (ES6+)</h3>
+                        <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-6">Breathing life into static pages with DOM manipulation, interactive timers, and APIs.</p>
+                    </div>
+                    <div class="flex items-center gap-1.5 pt-4 border-t border-white/5">
+                        <span class="text-[10px] font-mono text-gray-500 mr-auto">POWER</span>
+                        <div class="w-5 h-1.5 rounded-full bg-yellow-400"></div>
+                        <div class="w-5 h-1.5 rounded-full bg-yellow-400"></div>
+                        <div class="w-5 h-1.5 rounded-full bg-yellow-400"></div>
+                        <div class="w-5 h-1.5 rounded-full bg-yellow-400"></div>
+                        <div class="w-5 h-1.5 rounded-full bg-yellow-950"></div>
+                    </div>
+                </div>
+
+                <!-- کارت ۴: Figma -->
+                <div class="group bg-[#0a0a12] border border-white/10 hover:border-purple-400/50 rounded-3xl p-6 sm:p-7 transition-all duration-500 hover:-translate-y-2 flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 font-black text-xl">
+                                FG
+                            </div>
+                            <span class="text-[10px] font-mono font-bold uppercase px-3 py-1 rounded-full bg-purple-500/10 text-purple-300">Pixel-Perfect</span>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-black text-white mb-2">Figma to Code</h3>
+                        <p class="text-gray-400 text-xs sm:text-sm leading-relaxed mb-6">Translating complex UI/UX prototypes into clean HTML5 & CSS3 with 100% accuracy.</p>
+                    </div>
+                    <div class="flex items-center gap-1.5 pt-4 border-t border-white/5">
+                        <span class="text-[10px] font-mono text-gray-500 mr-auto">POWER</span>
+                        <div class="w-5 h-1.5 rounded-full bg-purple-400"></div>
+                        <div class="w-5 h-1.5 rounded-full bg-purple-400"></div>
+                        <div class="w-5 h-1.5 rounded-full bg-purple-400"></div>
+                        <div class="w-5 h-1.5 rounded-full bg-purple-400"></div>
+                        <div class="w-5 h-1.5 rounded-full bg-purple-400"></div>
+                    </div>
+                </div>
+
+                <!-- کارت ۵: Vibe Coding (۲ ستون) -->
+                <div class="sm:col-span-2 lg:col-span-2 bg-gradient-to-br from-[#12121e] via-[#0a0a12] to-[#1a100c] border border-[#F47920]/40 rounded-3xl p-6 sm:p-8 flex flex-col justify-between">
+                    <div>
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#F47920]/20 border border-[#F47920]/40 flex items-center justify-center text-[#F47920] text-2xl">
+                                    ⚡
+                                </div>
+                                <div>
+                                    <span class="text-[10px] font-mono font-bold uppercase text-[#F47920] block">10x Productivity</span>
+                                    <h3 class="text-xl sm:text-3xl font-black text-white">AI-Augmented & Vibe Coding</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 text-xs sm:text-sm leading-relaxed mb-6">
+                            Leveraging advanced AI coding agents, n8n automation workflows, and modern IDE extensions to build, debug, and ship production-ready interfaces rapidly.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-2 pt-4 border-t border-white/10">
+                        <span class="text-[10px] font-semibold bg-white/5 px-3 py-1 rounded-lg text-gray-300">HTML5 / CSS3</span>
+                        <span class="text-[10px] font-semibold bg-white/5 px-3 py-1 rounded-lg text-gray-300">Git & GitHub</span>
+                        <span class="text-[10px] font-semibold bg-white/5 px-3 py-1 rounded-lg text-gray-300">n8n Automation</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- دکمه‌های برگشت به خانه و پروژه‌ها -->
+            <div class="mt-14 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="/src/inex1.html" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-xs sm:text-sm font-bold text-gray-300 text-center">
+                    ← Back to Home
+                </a>
+                <a href="/src/project.html" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#F47920] hover:bg-[#ff8f3d] text-xs sm:text-sm font-bold text-black text-center">
+                    View My Projects →
+                </a>
+            </div>
+        </div>
+
+        <!-- نوار متحرک پایین -->
+        <div class="w-full bg-white/[0.02] border-y border-white/5 py-4 mt-20 overflow-hidden relative flex items-center">
+            <div class="animate-marquee flex items-center gap-10 text-xs font-black tracking-[0.25em] text-gray-500 uppercase">
+                <span>REACT.JS</span> <span class="text-[#F47920]">✦</span>
+                <span>TAILWIND CSS</span> <span class="text-cyan-400">✦</span>
+                <span>JAVASCRIPT ES6+</span> <span class="text-purple-500">✦</span>
+                <span>FIGMA TO CODE</span> <span class="text-[#F47920]">✦</span>
+                <span>NEXT.JS</span> <span class="text-cyan-400">✦</span>
+                <span>REACT.JS</span> <span class="text-[#F47920]">✦</span>
+                <span>TAILWIND CSS</span> <span class="text-cyan-400">✦</span>
+                <span>JAVASCRIPT ES6+</span> <span class="text-purple-500">✦</span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-white/5 py-8 text-center text-xs text-gray-500">
+        <p>© 2026 BENYAMIN. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
