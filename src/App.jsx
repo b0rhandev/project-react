@@ -2,33 +2,33 @@ import { useEffect, useMemo, useState } from 'react'
 
 // ۱. لیست محصولات با لینک‌های عکسِ سالم و تست‌شده
 const products = [
-  { id: 'mug', name: 'ماگ دست‌ساز آوید', category: 'ظروف', price: 680000, oldPrice: 820000, tag: 'پرفروش', color: 'ماسه‌ای', image: 'photo-1514228742587-6b1558fcca3d' },
-  { id: 'vase', name: 'گلدان سرامیکی رها', category: 'دکور', price: 1240000, tag: 'جدید', color: 'سفید شیری', image: 'photo-1578500494198-246f612d3b3d' },
-  { id: 'plate', name: 'بشقاب دست‌ساز ماهور', category: 'ظروف', price: 890000, color: 'آبی اقیانوسی', image: 'photo-1578749556568-bc2c40e68b61' },
-  { id: 'candle', name: 'شمع معطر جنگل', category: 'خانه و عطر', price: 540000, tag: 'محبوب', color: 'سبز زیتونی', image: 'photo-1603006905003-be475563bc59' },
-  { id: 'bowl', name: 'کاسه سرامیکی نیلا', category: 'ظروف', price: 760000, color: 'خاکی', image: 'photo-1610701596007-11502861dcfa' },
-  { id: 'vase-2', name: 'گلدان مینیمال آبان', category: 'دکور', price: 1580000, tag: 'محدود', color: 'سفید مات', image: 'photo-1612196808214-b8e1d6145a8c' },
-  { id: 'lamp', name: 'چراغ رومیزی سپیدار', category: 'روشنایی', price: 2150000, tag: 'جدید', color: 'چوب طبیعی', image: 'photo-1507473885765-e6ed057f782c' },
-  { id: 'throw', name: 'شال مبل بافت باران', category: 'بافت و پارچه', price: 1890000, color: 'کرم گرم', image: 'photo-1584100936595-c0654b55a2e2' },
-  { id: 'tray', name: 'سینی چوبی نارون', category: 'میز و پذیرایی', price: 980000, color: 'گردویی', image: 'photo-1615529182904-14819c35db37' },
-  { id: 'diffuser', name: 'دیفیوزر رایحه‌ی صبح', category: 'خانه و عطر', price: 720000, tag: 'محبوب', color: 'مرکبات و چوب', image: 'photo-1608571423902-eed4a5ad8108' },
-  { id: 'basket', name: 'سبد بافت دست‌ساز', category: 'بافت و پارچه', price: 1120000, color: 'الیاف طبیعی', image: 'photo-1595428774223-ef52624120d2' },
-  { id: 'jar', name: 'ظرف نگهدارنده‌ی آوا', category: 'میز و پذیرایی', price: 640000, color: 'خاک رس', image: 'photo-1584589167171-541ce45f1eea' },
+  { id: 'mug', name: 'ماگ دست‌ساز آوید', category: 'ظروف', price: 680000, oldPrice: 820000, tag: 'پرفروش', color: 'ماسه‌ای', image: 'https://images.pexels.com/photos/8063803/pexels-photo-8063803.jpeg?auto=compress&cs=tinysrgb&w=900' },
+  { id: 'vase', name: 'گلدان سرامیکی رها', category: 'دکور', price: 1240000, tag: 'جدید', color: 'سفید شیری', image: 'https://images.pexels.com/photos/7663201/pexels-photo-7663201.jpeg?auto=compress&cs=tinysrgb&w=900' },
+  { id: 'plate', name: 'بشقاب دست‌ساز ماهور', category: 'ظروف', price: 890000, color: 'آبی اقیانوسی', image: 'https://images.pexels.com/photos/30259432/pexels-photo-30259432.jpeg?auto=compress&cs=tinysrgb&w=900' },
+  { id: 'candle', name: 'شمع معطر جنگل', category: 'خانه و عطر', price: 540000, tag: 'محبوب', color: 'سبز زیتونی', image: 'https://images.pexels.com/photos/6798396/pexels-photo-6798396.jpeg?auto=compress&cs=tinysrgb&w=900' },
+  { id: 'bowl', name: 'کاسه سرامیکی نیلا', category: 'ظروف', price: 760000, color: 'خاکی', image: 'https://images.pexels.com/photos/29312155/pexels-photo-29312155.jpeg?auto=compress&cs=tinysrgb&w=900' },
+  { id: 'vase-2', name: 'گلدان مینیمال آبان', category: 'دکور', price: 1580000, tag: 'محدود', color: 'سفید مات', image: 'https://images.pexels.com/photos/19193216/pexels-photo-19193216.jpeg?auto=compress&cs=tinysrgb&w=900' },
+  { id: 'lamp', name: 'چراغ رومیزی سپیدار', category: 'روشنایی', price: 2150000, tag: 'جدید', color: 'چوب طبیعی', image: 'https://images.pexels.com/photos/31410610/pexels-photo-31410610.jpeg?auto=compress&cs=tinysrgb&w=900' },
+  { id: 'throw', name: 'شال مبل بافت باران', category: 'بافت و پارچه', price: 1890000, color: 'کرم گرم', image: 'https://images.pexels.com/photos/31658575/pexels-photo-31658575.jpeg?auto=compress&cs=tinysrgb&w=900' },
+  { id: 'tray', name: 'سینی چوبی نارون', category: 'میز و پذیرایی', price: 980000, color: 'گردویی', image: 'https://images.pexels.com/photos/7675064/pexels-photo-7675064.jpeg?auto=compress&cs=tinysrgb&w=900' },
+  { id: 'diffuser', name: 'دیفیوزر رایحه‌ی صبح', category: 'خانه و عطر', price: 720000, tag: 'محبوب', color: 'مرکبات و چوب', image: 'https://images.pexels.com/photos/7795656/pexels-photo-7795656.jpeg?auto=compress&cs=tinysrgb&w=900' },
+  { id: 'basket', name: 'سبد بافت دست‌ساز', category: 'بافت و پارچه', price: 1120000, color: 'الیاف طبیعی', image: 'https://images.pexels.com/photos/10117739/pexels-photo-10117739.jpeg?auto=compress&cs=tinysrgb&w=900' },
+  { id: 'jar', name: 'ظرف نگهدارنده‌ی آوا', category: 'میز و پذیرایی', price: 640000, color: 'خاک رس', image: 'https://images.pexels.com/photos/6258/kitchen-design-home-decoration.jpg?auto=compress&cs=tinysrgb&w=900' },
 ]
 
 const categories = ['همه محصولات', ...new Set(products.map((product) => product.category))]
 
 const stories = [
-  { image: 'photo-1616486338812-3dadae4b4ace', title: 'چطور با چند تغییر کوچک، خانه را آرام‌تر کنیم؟', meta: 'سبک زندگی · ۵ دقیقه' },
-  { image: 'photo-1610701596007-11502861dcfa', title: 'پشت هر قطعه‌ی دست‌ساز، یک جفت دستِ مهربان', meta: 'دست‌ساز · ۳ دقیقه' },
-  { image: 'photo-1494438639946-1ebd1d20bf85', title: 'یک میز ساده؛ بهانه‌ای برای کنار هم بودن', meta: 'خانه‌داری · ۴ دقیقه' },
-  { image: 'photo-1578500494198-246f612d3b3d', title: 'چیزهایی که خانه را به خانه تبدیل می‌کنند', meta: 'الهام · ۶ دقیقه' },
-  { image: 'photo-1603006905003-be475563bc59', title: 'عطر خانه؛ انتخاب رایحه‌ای که حال تو را خوب می‌کند', meta: 'خانه‌داری · ۴ دقیقه' },
-  { image: 'photo-1455390582262-044cdead277a', title: 'قصه‌ی کوتاه هنرمندانی که با دست می‌سازند', meta: 'آدم‌ها · ۷ دقیقه' },
+  { image: 'https://images.pexels.com/photos/30861337/pexels-photo-30861337.jpeg?auto=compress&cs=tinysrgb&w=900', title: 'چطور با چند تغییر کوچک، خانه را آرام‌تر کنیم؟', meta: 'سبک زندگی · ۵ دقیقه' },
+  { image: 'https://images.pexels.com/photos/34230986/pexels-photo-34230986.jpeg?auto=compress&cs=tinysrgb&w=900', title: 'پشت هر قطعه‌ی دست‌ساز، یک جفت دستِ مهربان', meta: 'دست‌ساز · ۳ دقیقه' },
+  { image: 'https://images.pexels.com/photos/7180275/pexels-photo-7180275.jpeg?auto=compress&cs=tinysrgb&w=900', title: 'یک میز ساده؛ بهانه‌ای برای کنار هم بودن', meta: 'خانه‌داری · ۴ دقیقه' },
+  { image: 'https://images.pexels.com/photos/5482202/pexels-photo-5482202.jpeg?auto=compress&cs=tinysrgb&w=900', title: 'چیزهایی که خانه را به خانه تبدیل می‌کنند', meta: 'الهام · ۶ دقیقه' },
+  { image: 'https://images.pexels.com/photos/7795650/pexels-photo-7795650.jpeg?auto=compress&cs=tinysrgb&w=900', title: 'عطر خانه؛ انتخاب رایحه‌ای که حال تو را خوب می‌کند', meta: 'خانه‌داری · ۴ دقیقه' },
+  { image: 'https://images.pexels.com/photos/22823/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=900', title: 'قصه‌ی کوتاه هنرمندانی که با دست می‌سازند', meta: 'آدم‌ها · ۷ دقیقه' },
 ]
 
 // توابع کمکی برای ساخت لینک عکس و فرمت کردن قیمت به فارسی
-const imageUrl = (id, width = 900) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${width}&q=80`
+const imageUrl = (url) => url
 const formatPrice = (price) => `${new Intl.NumberFormat('fa-IR').format(price)} تومان`
 
 // ۲. کامپوننت هوشمند عکس (اگر اینترنت کاربر عکس را باز نکرد، طرح جایگزین شیک نشان می‌دهد)
@@ -133,9 +133,8 @@ function ProductCard({ product, favorite, onFavorite, onAdd }) {
         )}
 
         <button
-          className={`absolute left-3 top-3 grid size-9 place-items-center rounded-full bg-stone-50/90 transition hover:text-rose-600 dark:bg-stone-900/90 ${
-            favorite ? 'text-rose-600' : 'text-stone-700 dark:text-stone-200'
-          }`}
+          className={`absolute left-3 top-3 grid size-9 place-items-center rounded-full bg-stone-50/90 transition hover:text-rose-600 dark:bg-stone-900/90 ${favorite ? 'text-rose-600' : 'text-stone-700 dark:text-stone-200'
+            }`}
           onClick={() => onFavorite(product.id)}
           aria-label="افزودن به علاقه‌مندی‌ها"
         >
@@ -208,7 +207,7 @@ function ProductGrid({ items, favorites, onFavorite, onAdd }) {
 // ۵. کامپوننت اصلی برنامه
 function App() {
   const [route, setRoute] = useState(window.location.hash.slice(1) || 'home')
-  
+
   // ذخیره سبد خرید و علاقه‌مندی‌ها در حافظه مرورگر تا با رفرش نپرند
   const [cart, setCart] = useState(() => {
     try {
@@ -360,9 +359,8 @@ function App() {
         </a>
 
         <nav
-          className={`${
-            menuOpen ? 'flex' : 'hidden'
-          } absolute inset-x-0 top-full flex-col border-b border-stone-200 bg-stone-50 px-5 py-3 shadow-lg dark:border-stone-800 dark:bg-stone-950 md:static md:flex md:h-full md:flex-row md:items-center md:gap-8 md:border-0 md:bg-transparent md:p-0 md:shadow-none`}
+          className={`${menuOpen ? 'flex' : 'hidden'
+            } absolute inset-x-0 top-full flex-col border-b border-stone-200 bg-stone-50 px-5 py-3 shadow-lg dark:border-stone-800 dark:bg-stone-950 md:static md:flex md:h-full md:flex-row md:items-center md:gap-8 md:border-0 md:bg-transparent md:p-0 md:shadow-none`}
         >
           {[
             ['خانه', 'home'],
@@ -373,11 +371,10 @@ function App() {
           ].map(([label, target]) => (
             <a
               key={target}
-              className={`py-3 text-xs transition hover:text-green-800 dark:hover:text-lime-300 md:py-0 ${
-                route === target
+              className={`py-3 text-xs transition hover:text-green-800 dark:hover:text-lime-300 md:py-0 ${route === target
                   ? 'font-semibold text-green-900 dark:text-lime-300'
                   : 'text-stone-600 dark:text-stone-300'
-              }`}
+                }`}
               href={`#${target}`}
             >
               {label}
@@ -560,7 +557,7 @@ function App() {
             <div className="absolute -left-3 -top-3 h-4/5 w-3/4 bg-stone-200 dark:bg-stone-800" />
             <SafeImage
               className="relative size-full object-cover"
-              src={imageUrl('photo-1616486338812-3dadae4b4ace', 1400)}
+              src={imageUrl('https://images.pexels.com/photos/6615908/pexels-photo-6615908.jpeg?auto=compress&cs=tinysrgb&w=1400', 1400)}
               alt="فضای گرم و آرام خانه با دکور دست‌ساز"
             />
             <div className="absolute inset-x-3 bottom-3 flex flex-col gap-1 bg-stone-950/75 px-4 py-3 text-white sm:inset-x-5 sm:bottom-5">
@@ -622,20 +619,19 @@ function App() {
             </SectionHeading>
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-5">
               {[
-                ['ظروف', 'برای دورهمی‌های طولانی', 'photo-1610701596007-11502861dcfa'],
-                ['دکور', 'جزئیاتِ دوست‌داشتنی', 'photo-1578500494198-246f612d3b3d'],
-                ['خانه و عطر', 'نفس عمیق، خانه‌ی آرام', 'photo-1603006905003-be475563bc59'],
-                ['روشنایی', 'نوری برای گوشه‌ی دنج', 'photo-1507473885765-e6ed057f782c'],
-                ['بافت و پارچه', 'لطافتِ لحظه‌های خانه', 'photo-1584100936595-c0654b55a2e2'],
-                ['میز و پذیرایی', 'برای باهم بودن', 'photo-1615529182904-14819c35db37'],
+                ['ظروف', 'برای دورهمی‌های طولانی', 'https://images.pexels.com/photos/29312155/pexels-photo-29312155.jpeg?auto=compress&cs=tinysrgb&w=1000'],
+                ['دکور', 'جزئیاتِ دوست‌داشتنی', 'https://images.pexels.com/photos/5482202/pexels-photo-5482202.jpeg?auto=compress&cs=tinysrgb&w=1000'],
+                ['خانه و عطر', 'نفس عمیق، خانه‌ی آرام', 'https://images.pexels.com/photos/7795656/pexels-photo-7795656.jpeg?auto=compress&cs=tinysrgb&w=1000'],
+                ['روشنایی', 'نوری برای گوشه‌ی دنج', 'https://images.pexels.com/photos/31410610/pexels-photo-31410610.jpeg?auto=compress&cs=tinysrgb&w=1000'],
+                ['بافت و پارچه', 'لطافتِ لحظه‌های خانه', 'https://images.pexels.com/photos/31658575/pexels-photo-31658575.jpeg?auto=compress&cs=tinysrgb&w=1000'],
+                ['میز و پذیرایی', 'برای باهم بودن', 'https://images.pexels.com/photos/7675064/pexels-photo-7675064.jpeg?auto=compress&cs=tinysrgb&w=1000'],
               ].map(([name, caption, image]) => (
                 <a
                   key={name}
                   href="#shop"
                   onClick={() => setCategory(name)}
-                  className={`group relative h-52 overflow-hidden bg-stone-300 sm:h-64 ${
-                    name === 'خانه و عطر' ? 'col-span-2 sm:col-span-1' : ''
-                  }`}
+                  className={`group relative h-52 overflow-hidden bg-stone-300 sm:h-64 ${name === 'خانه و عطر' ? 'col-span-2 sm:col-span-1' : ''
+                    }`}
                 >
                   <SafeImage
                     className="size-full object-cover transition duration-700 group-hover:scale-105"
@@ -658,7 +654,7 @@ function App() {
           <div className="h-64 md:h-[420px]">
             <SafeImage
               className="size-full object-cover"
-              src={imageUrl('photo-1455390582262-044cdead277a', 1000)}
+              src={imageUrl('https://images.pexels.com/photos/34259428/pexels-photo-34259428.jpeg?auto=compress&cs=tinysrgb&w=1000', 1000)}
               alt="دست‌های هنرمند در کارگاه"
             />
           </div>
@@ -747,11 +743,10 @@ function App() {
               {categories.map((item) => (
                 <button
                   key={item}
-                  className={`shrink-0 border-b-2 py-3 text-xs transition ${
-                    category === item
+                  className={`shrink-0 border-b-2 py-3 text-xs transition ${category === item
                       ? 'border-green-800 font-semibold text-green-900 dark:border-lime-300 dark:text-lime-300'
                       : 'border-transparent text-stone-500 hover:text-stone-900 dark:text-stone-400 dark:hover:text-white'
-                  }`}
+                    }`}
                   onClick={() => setCategory(item)}
                 >
                   {item}
@@ -863,9 +858,8 @@ function App() {
               </button>
 
               <button
-                className={`grid size-12 place-items-center border border-stone-200 transition hover:text-rose-600 dark:border-stone-700 ${
-                  isFav ? 'text-rose-600' : ''
-                }`}
+                className={`grid size-12 place-items-center border border-stone-200 transition hover:text-rose-600 dark:border-stone-700 ${isFav ? 'text-rose-600' : ''
+                  }`}
                 onClick={() => toggleFavorite(selectedProduct.id)}
                 aria-label="علاقه‌مندی"
               >
@@ -1035,7 +1029,7 @@ function App() {
         <section className="relative h-[330px] overflow-hidden sm:h-[440px]">
           <SafeImage
             className="size-full object-cover brightness-50"
-            src={imageUrl('photo-1455390582262-044cdead277a', 1500)}
+            src={imageUrl('https://images.pexels.com/photos/28867402/pexels-photo-28867402.jpeg?auto=compress&cs=tinysrgb&w=1500', 1500)}
             alt="میز کار یک هنرمند"
           />
           <div className="absolute inset-y-0 right-[7%] flex flex-col justify-center text-white sm:right-[12%]">
@@ -1243,9 +1237,8 @@ function App() {
 
   return (
     <div
-      className={`${
-        darkMode ? 'dark' : ''
-      } min-h-screen bg-stone-50 font-sans text-stone-900 transition-colors duration-300 dark:bg-stone-950 dark:text-stone-100 [color-scheme:light] dark:[color-scheme:dark]`}
+      className={`${darkMode ? 'dark' : ''
+        } min-h-screen bg-stone-50 font-sans text-stone-900 transition-colors duration-300 dark:bg-stone-950 dark:text-stone-100 [color-scheme:light] dark:[color-scheme:dark]`}
       dir="rtl"
     >
       {header}
