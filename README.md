@@ -38,6 +38,6 @@ Experience the live project here: [Khaneh-Zad Online Store](https://b0rhandev.gi
 * **استایل‌دهی:** Tailwind CSS
 
 <br>
-<em>توسعه‌یافته با ❤️ توسط برهان</em>
+<em>توسعه‌ یافته توسط برهان</em>
 
 </div>
