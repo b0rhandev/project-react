@@ -1,30 +1,47 @@
 import { useEffect, useMemo, useState } from 'react'
+import vaseImage from './pexels-photo-7663201.jpg'
+import plateImage from './pexels-photo-30259432.jpg'
+import candleImage from './pexels-photo-6798396.jpg'
+import bowlImage from './pexels-photo-29312155.jpg'
+import secondVaseImage from './pexels-photo-19193216.jpg'
+import lampImage from './pexels-photo-31410610.jpg'
+import throwImage from './pexels-photo-31658575.jpg'
+import trayImage from './pexels-photo-7675064.jpg'
+import diffuserImage from './pexels-photo-7795656.jpg'
+import basketImage from './pexels-photo-10117739.jpg'
+import jarImage from './kitchen-design-home-decoration.jpg'
+import storyHomeImage from '../pexels-photo-30861337.jpg'
+import storyCraftImage from '../pexels-photo-34230986.jpg'
+import storyTableImage from '../pexels-photo-7180275.jpg'
+import storyDecorImage from '../pexels-photo-5482202.jpg'
+import storyScentImage from '../pexels-photo-7795650.jpg'
+import storyArtistsImage from '../pexels-photo.jpg'
 
 // ۱. لیست محصولات با لینک‌های عکسِ سالم و تست‌شده
 const products = [
-  { id: 'mug', name: 'ماگ دست‌ساز آوید', category: 'ظروف', price: 680000, oldPrice: 820000, tag: 'پرفروش', color: 'ماسه‌ای', image: 'https://images.pexels.com/photos/8063803/pexels-photo-8063803.jpeg?auto=compress&cs=tinysrgb&w=900' },
-  { id: 'vase', name: 'گلدان سرامیکی رها', category: 'دکور', price: 1240000, tag: 'جدید', color: 'سفید شیری', image: 'https://images.pexels.com/photos/7663201/pexels-photo-7663201.jpeg?auto=compress&cs=tinysrgb&w=900' },
-  { id: 'plate', name: 'بشقاب دست‌ساز ماهور', category: 'ظروف', price: 890000, color: 'آبی اقیانوسی', image: 'https://images.pexels.com/photos/30259432/pexels-photo-30259432.jpeg?auto=compress&cs=tinysrgb&w=900' },
-  { id: 'candle', name: 'شمع معطر جنگل', category: 'خانه و عطر', price: 540000, tag: 'محبوب', color: 'سبز زیتونی', image: 'https://images.pexels.com/photos/6798396/pexels-photo-6798396.jpeg?auto=compress&cs=tinysrgb&w=900' },
-  { id: 'bowl', name: 'کاسه سرامیکی نیلا', category: 'ظروف', price: 760000, color: 'خاکی', image: 'https://images.pexels.com/photos/29312155/pexels-photo-29312155.jpeg?auto=compress&cs=tinysrgb&w=900' },
-  { id: 'vase-2', name: 'گلدان مینیمال آبان', category: 'دکور', price: 1580000, tag: 'محدود', color: 'سفید مات', image: 'https://images.pexels.com/photos/19193216/pexels-photo-19193216.jpeg?auto=compress&cs=tinysrgb&w=900' },
-  { id: 'lamp', name: 'چراغ رومیزی سپیدار', category: 'روشنایی', price: 2150000, tag: 'جدید', color: 'چوب طبیعی', image: 'https://images.pexels.com/photos/31410610/pexels-photo-31410610.jpeg?auto=compress&cs=tinysrgb&w=900' },
-  { id: 'throw', name: 'شال مبل بافت باران', category: 'بافت و پارچه', price: 1890000, color: 'کرم گرم', image: 'https://images.pexels.com/photos/31658575/pexels-photo-31658575.jpeg?auto=compress&cs=tinysrgb&w=900' },
-  { id: 'tray', name: 'سینی چوبی نارون', category: 'میز و پذیرایی', price: 980000, color: 'گردویی', image: 'https://images.pexels.com/photos/7675064/pexels-photo-7675064.jpeg?auto=compress&cs=tinysrgb&w=900' },
-  { id: 'diffuser', name: 'دیفیوزر رایحه‌ی صبح', category: 'خانه و عطر', price: 720000, tag: 'محبوب', color: 'مرکبات و چوب', image: 'https://images.pexels.com/photos/7795656/pexels-photo-7795656.jpeg?auto=compress&cs=tinysrgb&w=900' },
-  { id: 'basket', name: 'سبد بافت دست‌ساز', category: 'بافت و پارچه', price: 1120000, color: 'الیاف طبیعی', image: 'https://images.pexels.com/photos/10117739/pexels-photo-10117739.jpeg?auto=compress&cs=tinysrgb&w=900' },
-  { id: 'jar', name: 'ظرف نگهدارنده‌ی آوا', category: 'میز و پذیرایی', price: 640000, color: 'خاک رس', image: 'https://images.pexels.com/photos/6258/kitchen-design-home-decoration.jpg?auto=compress&cs=tinysrgb&w=900' },
+  { id: 'mug', name: 'ماگ دست‌ساز آوید', category: 'ظروف', price: 680000, oldPrice: 820000, tag: 'پرفروش', color: 'ماسه‌ای', image: '' },
+  { id: 'vase', name: 'گلدان سرامیکی رها', category: 'دکور', price: 1240000, tag: 'جدید', color: 'سفید شیری', image: vaseImage },
+  { id: 'plate', name: 'بشقاب دست‌ساز ماهور', category: 'ظروف', price: 890000, color: 'آبی اقیانوسی', image: plateImage },
+  { id: 'candle', name: 'شمع معطر جنگل', category: 'خانه و عطر', price: 540000, tag: 'محبوب', color: 'سبز زیتونی', image: candleImage },
+  { id: 'bowl', name: 'کاسه سرامیکی نیلا', category: 'ظروف', price: 760000, color: 'خاکی', image: bowlImage },
+  { id: 'vase-2', name: 'گلدان مینیمال آبان', category: 'دکور', price: 1580000, tag: 'محدود', color: 'سفید مات', image: secondVaseImage },
+  { id: 'lamp', name: 'چراغ رومیزی سپیدار', category: 'روشنایی', price: 2150000, tag: 'جدید', color: 'چوب طبیعی', image: lampImage },
+  { id: 'throw', name: 'شال مبل بافت باران', category: 'بافت و پارچه', price: 1890000, color: 'کرم گرم', image: throwImage },
+  { id: 'tray', name: 'سینی چوبی نارون', category: 'میز و پذیرایی', price: 980000, color: 'گردویی', image: trayImage },
+  { id: 'diffuser', name: 'دیفیوزر رایحه‌ی صبح', category: 'خانه و عطر', price: 720000, tag: 'محبوب', color: 'مرکبات و چوب', image: diffuserImage },
+  { id: 'basket', name: 'سبد بافت دست‌ساز', category: 'بافت و پارچه', price: 1120000, color: 'الیاف طبیعی', image: basketImage },
+  { id: 'jar', name: 'ظرف نگهدارنده‌ی آوا', category: 'میز و پذیرایی', price: 640000, color: 'خاک رس', image: jarImage },
 ]
 
 const categories = ['همه محصولات', ...new Set(products.map((product) => product.category))]
 
 const stories = [
-  { image: 'https://images.pexels.com/photos/30861337/pexels-photo-30861337.jpeg?auto=compress&cs=tinysrgb&w=900', title: 'چطور با چند تغییر کوچک، خانه را آرام‌تر کنیم؟', meta: 'سبک زندگی · ۵ دقیقه' },
-  { image: 'https://images.pexels.com/photos/34230986/pexels-photo-34230986.jpeg?auto=compress&cs=tinysrgb&w=900', title: 'پشت هر قطعه‌ی دست‌ساز، یک جفت دستِ مهربان', meta: 'دست‌ساز · ۳ دقیقه' },
-  { image: 'https://images.pexels.com/photos/7180275/pexels-photo-7180275.jpeg?auto=compress&cs=tinysrgb&w=900', title: 'یک میز ساده؛ بهانه‌ای برای کنار هم بودن', meta: 'خانه‌داری · ۴ دقیقه' },
-  { image: 'https://images.pexels.com/photos/5482202/pexels-photo-5482202.jpeg?auto=compress&cs=tinysrgb&w=900', title: 'چیزهایی که خانه را به خانه تبدیل می‌کنند', meta: 'الهام · ۶ دقیقه' },
-  { image: 'https://images.pexels.com/photos/7795650/pexels-photo-7795650.jpeg?auto=compress&cs=tinysrgb&w=900', title: 'عطر خانه؛ انتخاب رایحه‌ای که حال تو را خوب می‌کند', meta: 'خانه‌داری · ۴ دقیقه' },
-  { image: 'https://images.pexels.com/photos/22823/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=900', title: 'قصه‌ی کوتاه هنرمندانی که با دست می‌سازند', meta: 'آدم‌ها · ۷ دقیقه' },
+  { image: storyHomeImage, title: 'چطور با چند تغییر کوچک، خانه را آرام‌تر کنیم؟', meta: 'سبک زندگی · ۵ دقیقه' },
+  { image: storyCraftImage, title: 'پشت هر قطعه‌ی دست‌ساز، یک جفت دستِ مهربان', meta: 'دست‌ساز · ۳ دقیقه' },
+  { image: storyTableImage, title: 'یک میز ساده؛ بهانه‌ای برای کنار هم بودن', meta: 'خانه‌داری · ۴ دقیقه' },
+  { image: storyDecorImage, title: 'چیزهایی که خانه را به خانه تبدیل می‌کنند', meta: 'الهام · ۶ دقیقه' },
+  { image: storyScentImage, title: 'عطر خانه؛ انتخاب رایحه‌ای که حال تو را خوب می‌کند', meta: 'خانه‌داری · ۴ دقیقه' },
+  { image: storyArtistsImage, title: 'قصه‌ی کوتاه هنرمندانی که با دست می‌سازند', meta: 'آدم‌ها · ۷ دقیقه' },
 ]
 
 // توابع کمکی برای ساخت لینک عکس و فرمت کردن قیمت به فارسی
